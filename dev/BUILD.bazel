@@ -1,0 +1,18 @@
+load("@bazel_env.bzl", "bazel_env")
+load("@gazelle//:go_tools.bzl", "GO_TOOLS")
+load("@multitool//:tools.bzl", "TOOLS")
+load("@rules_go//go:def.bzl", "TOOLS_NOGO", "nogo")
+
+nogo(
+    name = "nogo",
+    visibility = ["//visibility:public"],
+    deps = TOOLS_NOGO,
+)
+
+bazel_env(
+    name = "env",
+    tools = {
+        "go": "@rules_go//go",
+        "pre-commit": TOOLS["pre-commit"],
+    } | GO_TOOLS,
+)

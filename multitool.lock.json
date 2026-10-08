@@ -1,0 +1,14 @@
+{
+    "$schema": "https://raw.githubusercontent.com/theoremlp/rules_multitool/main/lockfile.schema.json",
+    "pre-commit": {
+        "binaries": [
+            {
+                "kind": "file",
+                "url": "https://github.com/pre-commit/pre-commit/releases/download/v4.6.2/pre-commit-4.6.2.pyz",
+                "sha256": "43c09a73d82af8efff09900e60d76d67a2c3d990613c3c770b2b5c4418a16c4b",
+                "os": "linux",
+                "cpu": "x86_64"
+            }
+        ]
+    }
+}
