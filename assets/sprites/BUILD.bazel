@@ -1,0 +1,12 @@
+load("@bazel_skylib//lib:paths.bzl", "paths")
+load("//bzl:aseprite.bzl", "ase_generate_previews")
+
+filegroup(
+    name = "aseprite_files",
+    srcs = glob(["*.aseprite"]),
+)
+
+ase_generate_previews(
+    name = "generate_previews",
+    srcs = [":aseprite_files"],
+)
