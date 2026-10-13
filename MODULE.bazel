@@ -18,6 +18,9 @@ multitool = use_extension("@rules_multitool//multitool:extension.bzl", "multitoo
 multitool.hub(lockfile = "//:multitool.lock.json")
 use_repo(multitool, "multitool")
 
-aseprite = use_repo_rule("//bzl:aseprite.bzl", "aseprite")
+host = use_repo_rule("//bzl:host.bzl", "host")
 
-aseprite(name = "aseprite")
+host(
+    name = "host",
+    programs = ["aseprite"],
+)

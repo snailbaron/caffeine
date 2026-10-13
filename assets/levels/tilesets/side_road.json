@@ -1,0 +1,14 @@
+{ "columns":4,
+ "image":"..\/..\/..\/bazel-bin\/assets\/sprites\/tilesets\/side_road.png",
+ "imageheight":80,
+ "imagewidth":64,
+ "margin":0,
+ "name":"side_road",
+ "spacing":0,
+ "tilecount":20,
+ "tiledversion":"1.12.2",
+ "tileheight":16,
+ "tilewidth":16,
+ "type":"tileset",
+ "version":"1.10"
+}

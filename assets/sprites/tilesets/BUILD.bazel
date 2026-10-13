@@ -1,0 +1,11 @@
+load("@bazel_skylib//lib:paths.bzl", "paths")
+load("//bzl:aseprite.bzl", "ase_export")
+
+[
+    ase_export(
+        name = "export_" + paths.split_extension(paths.basename(p))[0],
+        src = p,
+        slice = "export",
+    )
+    for p in glob(["*.aseprite"])
+]

@@ -1,12 +1,14 @@
 load("@bazel_skylib//lib:paths.bzl", "paths")
-load("//bzl:aseprite.bzl", "ase_generate_previews")
+load("//bzl:aseprite.bzl", "ase_export")
 
-filegroup(
-    name = "aseprite_files",
-    srcs = glob(["*.aseprite"]),
-)
-
-ase_generate_previews(
-    name = "generate_previews",
-    srcs = [":aseprite_files"],
-)
+[
+    ase_export(
+        name = "export_" + paths.split_extension(paths.basename(p))[0],
+        src = p,
+        frame_range = [
+            0,
+            0,
+        ],
+    )
+    for p in glob(["*.aseprite"])
+]
